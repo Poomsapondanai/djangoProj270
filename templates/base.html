@@ -1,0 +1,113 @@
+{# base.html #}
+{% load static %}
+
+<html>
+<head>
+    <title>poom</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-5.0.2-dist/css/bootstrap.css' %}">
+    <script src="{% static 'bootstrap-5.0.2-dist/js/bootstrap.js' %}"></script>
+</head>
+<head>
+    <style>
+        .snip1143 {
+            font-family: 'Raleway', Arial, "Anakotmai Bold";
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: 1000;
+        }
+        .snip1143 * {
+            box-sizing: border-box;
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+        }
+        .snip1143 li {
+            display: inline-block;
+            list-style: outside none none;
+            margin: 0 1.5em;
+            overflow: hidden;
+        }
+        .snip1143 a {
+            padding: 0.3em 0;
+            color: rgba(255, 255, 255, 0.5);
+            position: relative;
+            display: inline-block;
+            letter-spacing: 3px;
+            margin: 3px;
+            text-decoration: none;
+        }
+        .snip1143 a:before,
+        .snip1143 a:after {
+            position: absolute;
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+        }
+        .snip1143 a:before {
+            top: 100%;
+            display: block;
+            height: 3px;
+            width: 100%;
+            content: "";
+            color: orangered;
+            background-color: #c0392b;
+        }
+        .snip1143 a:after {
+            padding: 0.3em 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            content: attr(data-hover);
+            color: orangered;
+            white-space: nowrap;
+        }
+        .snip1143 li:hover a,
+        .snip1143 .current a {
+            transform: translateY(-100%);
+        }
+        /* Demo purposes only */
+        body {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #212121;
+        }
+
+
+        /* Demo purposes only */
+        html {
+            height: 100%;
+        }
+        body {
+            background-color: #212121;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: wrap;
+            margin: 0;
+            height: 100%;
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body style="font-family: 'Anakotmai">
+<nav class="navbar-nav nav-justified navbar-expand-lg justify-content-center fixed-top "></nav>
+<br>
+{% include 'menu.html' %}
+<div class="col-lg-10">
+    {% block content %}
+    {% endblock %}
+</div>
+</div>
+</div>
+</body>
+</html>

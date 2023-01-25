@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row text-center">
+        <img src="{% static 'images/ims.png' %}" style="width: 1300px;">
+        <br>
+        <br>
+        <div class="row text-center text-light">
+            <h1>สนใจศิลปะเเละยานยนต์</h1>
+            <br><br>
+            <div class="col-sm-4">
+                <div class="row text-center">
+                    <img src="{% static 'images/art1.png' %}" style="width: 1500px;">
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="row text-center">
+                    <img src="{% static 'images/art2.png' %}" style="width: 1500px;">
+                </div>
+            </div>
+             <div class="col-sm-4">
+                <div class="row text-center">
+                    <img src="{% static 'images/art3.png' %}" style="width: 1500px;">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

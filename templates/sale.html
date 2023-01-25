@@ -1,0 +1,231 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row text-center">
+        <img src="{% static 'images/sale.png' %}" style="width: 1300px;">
+    </div>
+    <br>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "Istok Web", "Anakotmai Bold";
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #212121;
+        }
+
+        .card {
+            position: relative;
+            width: 335px;
+            height:740px;
+            background: #212529;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            width: 100%;
+            height: 100%;
+            background: #0dcaf0;
+            transform: skewY(345deg);
+            transition: 0.5s;
+        }
+
+        .card:hover::before {
+            top: -70%;
+            transform: skewY(390deg);
+        }
+
+        .card::after {
+            content: "PRODUCT";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-weight: 600;
+            font-size: 6em;
+            color: rgba(0, 0, 0, 0.1);
+        }
+
+        .card .imgBox {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 20px;
+            z-index: 1;
+        }
+        /*
+        .card .imgBox img {
+            max-width: 100%;
+
+            transition: .5s;
+        }
+
+        .card:hover .imgBox img {
+            max-width: 50%;
+
+        }
+        */
+        .card .contentBox {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 2;
+        }
+
+        .card .contentBox h3 {
+            font-size: 18px;
+            color: white;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card .contentBox .price {
+            font-size: 24px;
+            color: white;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .card .contentBox .buy {
+            position: relative;
+            top: 100px;
+            opacity: 0;
+            padding: 10px 50px;
+            margin-top: 0px;
+            color: #f0f0f0;
+            text-decoration: none;
+            background: #fd7e14;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 1.0s;
+        }
+
+        .card:hover .contentBox .buy {
+            top: 0;
+            opacity: 1;
+        }
+
+        .mouse {
+            height: 300px;
+            width: auto;
+        }
+
+    </style>
+    <body>
+    <body>
+
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'images/slidenood.jpg' %}" style="width: 1500px;">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'images/slidenood2.jpg' %}" style="width: 1500px;">
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+
+
+    </body>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="imgBox">
+                    <img src="{% static 'images/mango.png' %}" alt="mouse corsair" class="mouse">
+                </div>
+                <div class="contentBox">
+                    <img src="{% static 'images/manukai4.png' %}" style="width: 300px;">
+                    <img src="{% static 'images/40.gif' %}" style="width:200px;">
+                    <br>
+                    <a href="#" class="buy">ซื้อเลย</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+
+                <div class="imgBox">
+                    <img src="{% static 'images/noodle2.jpg' %}" alt="mouse corsair" class="mouse">
+                </div>
+
+                <div class="contentBox">
+                    <img src="{% static 'images/manukai2.png' %}" style="width: 300px;">
+                    <img src="{% static 'images/40.gif' %}" style="width:200px;">
+                    <br>
+                    <a href="#" class="buy">ซื้อเลย</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+
+                <div class="imgBox">
+                    <img src="{% static 'images/noodle.jpg' %}" alt="mouse corsair" class="mouse">
+                </div>
+
+                <div class="contentBox">
+                    <img src="{% static 'images/manukai2.png' %}" style="width: 300px;">
+                    <img src="{% static 'images/40.gif' %}" style="width:200px;">
+                    <br>
+                    <a href="#" class="buy">ซื้อเลย</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="card">
+
+                <div class="imgBox">
+                    <img src="{% static 'images/noodle3.jpg' %}" alt="mouse corsair" class="mouse">
+                </div>
+
+                <div class="contentBox">
+                    <img src="{% static 'images/manukai.png' %}" style="width: 300px;">
+                    <img src="{% static 'images/40.gif' %}" style="width:200px;">
+                    <br>
+                    <a href="#" class="buy">ซื้อเลย</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    </body>
+{% endblock %}

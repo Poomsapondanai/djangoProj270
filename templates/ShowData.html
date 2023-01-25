@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row text-light">
+        <div class="col-md-4">
+            <img src="{% static 'images/propoomone.png' %}" style="width: 400px;">
+        </div>
+        <div class="col-md-6">
+             <img src="{% static 'images/SHOW.png' %}" style="width: 500px;">
+            <hr class="text-dark">
+            <p class="lead m-0"><strong>idcard</strong> {{ idcard }}</p>
+            <p class="lead m-0"><strong>Name</strong> {{ name }}</p>
+            <p class="lead m-0"><strong>Address</strong> {{ address }}</p>
+            <p class="lead m-0"><strong>Domicile</strong> {{ domicile }}</p>
+            <p class="lead m-0"><strong>Gender</strong> {{ gender }}</p>
+            <p class="lead m-0"><strong>Weight</strong> {{ weight }}</p>
+            <p class="lead m-0"><strong>Height</strong> {{ height }}</p>
+            <p class="lead m-0"><strong>Favoritecolor</strong> {{ favoritecolor }}</p>
+            <p class="lead m-0"><strong>FavoriteFood</strong> {{ favoritefood }}</p>
+            <p class="lead m-0"><strong>Work</strong> {{ work }}</p>
+        </div>
+        <table class="text-light">
+            <tr>
+                <th>ID</th>
+                <th>IMAGES</th>
+                <th>NAME</th>
+                <th>PRICE</th>
+            </tr>
+            {% for products in product %}
+                <tr>
+                    <td>{{ products.0 }}</td>
+                    <td><img src="{{ products.1 }}" height="150" width="150"></td>
+                    <td>{{ products.2 }}</td>
+                    <td>{{ products.3 }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

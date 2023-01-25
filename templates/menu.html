@@ -1,0 +1,43 @@
+{# menu.html #}
+{% load static %}
+<html>
+<body>
+<div class="text-center">
+    <div class="header">
+        <br>   <img src="{% static 'images/899.png' %}" alt="imgesprofile"
+                    style="width:200px;">
+
+    </div>
+    <nav class="navbar-nav nav-justified navbar-expand-lg justify-content-center fixed-top "></nav>
+    <a href="{% url 'home' %}" class="navbar-brand ">
+
+    </a>
+    <br>
+    <img src="{% static 'images/saaa.jpg' %}" alt="banner"
+         style="width:1795px;">
+</div>
+
+<ul class="snip1143">
+    <li class="current"><a href="{% url 'home' %}" data-hover="โฮม">Home</a></li>
+    <li><a href="{% url 'profile' %}" data-hover="ประวิติส่วนตัว">PROFILE</a></li>
+    <li><a href="{% url 'education' %}" data-hover="การศึกษา">EDUCATION</a></li>
+    <li><a href="{% url 'insteres' %}" data-hover="สิ่งที่สนใจ">INSTERES</a></li>
+    <li><a href="{% url 'idol' %}" data-hover="ไอดอล">IDOL</a></li>
+    <li><a href="{% url 'sale' %}" data-hover=สินค้า">SALE</a></li>
+    <li><a href="{% url 'ShowData' %}" data-hover=ข้อมูล">ShowData</a></li>
+</ul>
+
+{% block sidebar %}
+    <br><br>
+
+
+{% endblock %}
+<br><br>
+<marquee direction = "up"> <img src="{% static 'images/slide2.png' %}" alt="banner"
+                                style="width:700px;"></marquee>
+
+
+</div>
+</body>
+</html>
+
