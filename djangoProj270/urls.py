@@ -20,5 +20,5 @@ from djangoProj270 import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profileApp/', include('profileApp.urls')),
-    path('', views.home, name='home')
+    path('', views.home, name='Home')
 ]

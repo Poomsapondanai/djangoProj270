@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
+from profileApp.forms import ProductForm
+from profileApp.models import *
 
 # Create your views here.
 def profile(request):
     return render(request, 'profile.html')
-
 
 def education(request):
     return render(request, 'education.html')
@@ -46,6 +47,111 @@ def ShowMyData(request):
         ['Bike0010', '/static/images/z1000.png', 'Kawasaki Z900', 429000.00],
     ]
     context = {'idcard': IdCard, 'name': Name, 'address': Address, 'domicile': Domicile, 'gender': Gender,'weight':Weight , 'height': Height,
-                   'favoritecolor': Favoritecolor, 'favoritefood':FavoriteFood, 'work':Work, 'product':products,}
+               'favoritecolor': Favoritecolor, 'favoritefood':FavoriteFood, 'work':Work, 'product':products,}
     return render(request, 'ShowData.html',context)
+lstOurProduct = []
+def listProduct(request):
+    context = {'product':lstOurProduct}
+    return render(request, 'listProduct.html',context)
 
+def inputProduct(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form = form.cleaned_data
+            id = form.get('id')
+            model = form.get('model')
+            scale = form.get('scale')
+            toybrand = form.get('toybrand')
+            type = form.get('type')
+            year = form.get('year')
+            colortype = form.get('colortype')
+
+            if model == 'Toyota Supra':
+                pModel = 1200
+            elif model == 'SUBARU IMPREZA WRC':
+                pModel = 1900
+            elif model == 'XANAVI NISMO GTR R35':
+                pModel = 2000
+            elif model == 'MUH-60L BLACK HAWK':
+                pModel = 1200
+            elif model == 'USS Missouri BB 63':
+                pModel = 1300
+            elif model == 'SUH-60L BLACK HAWK':
+                pModel = 1300
+            elif model == 'USS Missouri BB 63':
+                pModel = 1300
+            else:  # CADEMY 12568 USAF F-15E D-DAY 75th
+                pModel = 1200
+
+
+            if scale == '1/20':
+                pScale = 0
+            elif scale == '1/24':
+                pScale = 0
+            elif scale == '1/12':
+                pScale = 500
+            elif scale == '1/18':
+                pScale = 0
+            elif scale == '1/32':
+                pScale = 0
+            elif scale == '1/72':
+                pScale = 0
+            else:  # 144
+                pScale = 500
+
+
+            if toybrand == 'Tamiya' or 'ACADEMY PLASTIC KITS':
+                pToybrand = 0
+            else:  # ACADEMY PLASTIC KITS
+                pToybrand = 0
+
+            if type == ' CARS':
+                pType = 1200
+            elif type == ' Motorcycle':
+                pType = 900
+            elif type == ' boat':
+                pType = 1500
+            elif type == ' tank':
+                pType = 2500
+            else:  # plane
+                pType = 4500
+
+
+            if year == '2023':
+                pYear = 0
+            elif year == '2020':
+                pYear = 0
+            else:  # 2018
+                pYear = 0
+
+            if colortype == 'Sticker':
+                pColortype = 300
+            else:  # color'
+                pColortype = 500
+
+            pSum = pModel + \
+                   pScale + \
+                   pToybrand + \
+                   pType + \
+                   pYear + \
+                   pColortype
+
+            if pSum < 2000:
+                pDiscount = pSum * 5 / 100
+            elif pSum < 3000:
+                pDiscount = pSum * 15 / 100
+            else:
+                pDiscount = pSum * 10 / 100
+
+            pTotal = pSum - pDiscount
+
+            ProductList = Product(id,model,scale,toybrand,type,year,colortype)
+            lstOurProduct.append(ProductList)
+            return redirect('listProduct')
+        else:
+            form = ProductForm(form)
+    else:
+        form = ProductForm()
+        context = {'form':form}
+        return render(request,'inputProduct.html',context)

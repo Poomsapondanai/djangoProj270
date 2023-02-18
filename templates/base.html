@@ -100,6 +100,38 @@
     </style>
 </head>
 <body style="font-family: 'Anakotmai">
+<div class="m-3">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded-3">
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-light">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="location" href="{% url 'Home' %}">
+                        <i class="bi bi-house"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="location" href="{% url 'inputProduct' %}">
+                        <i class="bi bi-plus-square text-primary"></i>
+                        InputProduct
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="location" href="{% url 'listProduct' %}">
+                        <i class="bi bi-card-list text-warning"></i>
+                        ListProduct
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<div class="m-3">
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+{% endfor %}
 <nav class="navbar-nav nav-justified navbar-expand-lg justify-content-center fixed-top "></nav>
 <br>
 {% include 'menu.html' %}

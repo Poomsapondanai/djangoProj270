@@ -8,7 +8,7 @@ urlpatterns = [
     path('insteres', views.insteres, name="insteres"),
     path('idol', views.idol, name="idol"),
     path('sale', views.sale, name="sale"),
-    path('ShowData', views.ShowMyData,  name="ShowData")
-
-
+    path('ShowData', views.ShowMyData,  name="ShowData"),
+path('inputProduct', views.inputProduct,  name="inputProduct"),
+path('listProduct', views.listProduct,  name="listProduct")
 ]

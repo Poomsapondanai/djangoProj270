@@ -9,7 +9,7 @@
 
     </div>
     <nav class="navbar-nav nav-justified navbar-expand-lg justify-content-center fixed-top "></nav>
-    <a href="{% url 'home' %}" class="navbar-brand ">
+    <a href="{% url 'Home' %}" class="navbar-brand ">
 
     </a>
     <br>
@@ -18,13 +18,15 @@
 </div>
 
 <ul class="snip1143">
-    <li class="current"><a href="{% url 'home' %}" data-hover="โฮม">Home</a></li>
+    <li class="current"><a href="{% url 'Home' %}" data-hover="โฮม">Home</a></li>
     <li><a href="{% url 'profile' %}" data-hover="ประวิติส่วนตัว">PROFILE</a></li>
     <li><a href="{% url 'education' %}" data-hover="การศึกษา">EDUCATION</a></li>
     <li><a href="{% url 'insteres' %}" data-hover="สิ่งที่สนใจ">INSTERES</a></li>
     <li><a href="{% url 'idol' %}" data-hover="ไอดอล">IDOL</a></li>
     <li><a href="{% url 'sale' %}" data-hover=สินค้า">SALE</a></li>
-    <li><a href="{% url 'ShowData' %}" data-hover=ข้อมูล">ShowData</a></li>
+    <li><a href="{% url 'ShowData' %}" data-hover=ข้อมูล">SHOWDATA</a></li>
+    <li><a href="{% url 'inputProduct' %}" data-hover=เพิ่มข้อมูล">INPUTPRODUCT</a></li>
+    <li><a href="{% url 'listProduct' %}" data-hover=ตารางข้อมูล">LISTPRODUCT</a></li>
 </ul>
 
 {% block sidebar %}
